@@ -9,6 +9,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  intl: ^0.18.1
+  flutter_localizations: 
+    sdk: flutter
+  
 
 dev_dependencies:
   flutter_test:
