@@ -49,6 +49,56 @@ class S {
   static S? maybeOf(BuildContext context) {
     return Localizations.of<S>(context, S);
   }
+
+  /// `Register Page`
+  String get register_page_header {
+    return Intl.message(
+      'Register Page',
+      name: 'register_page_header',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Full Name`
+  String get register_page_filed_name_label_text {
+    return Intl.message(
+      'Full Name',
+      name: 'register_page_filed_name_label_text',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please state your full name`
+  String get register_page_filed_name_helper_text {
+    return Intl.message(
+      'Please state your full name',
+      name: 'register_page_filed_name_helper_text',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The field can't be empty`
+  String get register_page_filed_name_error_text {
+    return Intl.message(
+      'The field can\'t be empty',
+      name: 'register_page_filed_name_error_text',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Submit form`
+  String get register_page_button_text {
+    return Intl.message(
+      'Submit form',
+      name: 'register_page_button_text',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

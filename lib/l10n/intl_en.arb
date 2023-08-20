@@ -1,1 +1,8 @@
-{}
+{
+    "register_page_header" : "Register Page",
+    "register_page_filed_name_label_text" : "Full Name",
+    "register_page_filed_name_helper_text" : "Please state your full name",
+    "register_page_filed_name_error_text" : "The field can't be empty",
+
+    "register_page_button_text" : "Submit form"
+}

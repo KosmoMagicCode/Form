@@ -21,5 +21,16 @@ class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
   final messages = _notInlinedMessages(_notInlinedMessages);
-  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{};
+  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "register_page_button_text":
+            MessageLookupByLibrary.simpleMessage("Submit form"),
+        "register_page_filed_name_error_text":
+            MessageLookupByLibrary.simpleMessage("The field can\'t be empty"),
+        "register_page_filed_name_helper_text":
+            MessageLookupByLibrary.simpleMessage("Please state your full name"),
+        "register_page_filed_name_label_text":
+            MessageLookupByLibrary.simpleMessage("Full Name"),
+        "register_page_header":
+            MessageLookupByLibrary.simpleMessage("Register Page")
+      };
 }
