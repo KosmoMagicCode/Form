@@ -24,12 +24,19 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "RegisterPage": MessageLookupByLibrary.simpleMessage(
             "Register Page--------------------"),
+        "alert_dialog_button": MessageLookupByLibrary.simpleMessage("Verified"),
+        "alert_dialog_content": MessageLookupByLibrary.simpleMessage(
+            " is now a verified register form"),
+        "alert_dialog_titl":
+            MessageLookupByLibrary.simpleMessage("Registration successful"),
         "confirm_password_hint_text":
             MessageLookupByLibrary.simpleMessage("Confirm the password"),
         "confirm_password_label_text":
             MessageLookupByLibrary.simpleMessage("Confitm password *"),
+        "country_label_text":
+            MessageLookupByLibrary.simpleMessage("\'Country?"),
         "email_error_not_et":
-            MessageLookupByLibrary.simpleMessage("Invalid email"),
+            MessageLookupByLibrary.simpleMessage("Invalid email address"),
         "email_error_text_empty":
             MessageLookupByLibrary.simpleMessage("The field can\'t be empty"),
         "email_label_text":
@@ -42,7 +49,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "pass_error_is_empty": MessageLookupByLibrary.simpleMessage(
             "The field Password can\'t be empty."),
         "pass_error_lenght": MessageLookupByLibrary.simpleMessage(
-            "The password must be at least 8 characters long."),
+            "8 character required for password."),
         "password_hint_text":
             MessageLookupByLibrary.simpleMessage("Enter the password"),
         "password_label_text":

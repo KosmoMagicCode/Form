@@ -170,10 +170,10 @@ class S {
     );
   }
 
-  /// `Invalid email`
+  /// `Invalid email address`
   String get email_error_not_et {
     return Intl.message(
-      'Invalid email',
+      'Invalid email address',
       name: 'email_error_not_et',
       desc: '',
       args: [],
@@ -240,10 +240,10 @@ class S {
     );
   }
 
-  /// `The password must be at least 8 characters long.`
+  /// `8 character required for password.`
   String get pass_error_lenght {
     return Intl.message(
-      'The password must be at least 8 characters long.',
+      '8 character required for password.',
       name: 'pass_error_lenght',
       desc: '',
       args: [],
@@ -255,6 +255,16 @@ class S {
     return Intl.message(
       'Passwords don\'t match, please try again.',
       name: 'pass_error_dont_match',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `'Country?`
+  String get country_label_text {
+    return Intl.message(
+      '\'Country?',
+      name: 'country_label_text',
       desc: '',
       args: [],
     );
@@ -275,6 +285,36 @@ class S {
     return Intl.message(
       'Submit form',
       name: 'register_page_button_text',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Registration successful`
+  String get alert_dialog_titl {
+    return Intl.message(
+      'Registration successful',
+      name: 'alert_dialog_titl',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// ` is now a verified register form`
+  String get alert_dialog_content {
+    return Intl.message(
+      ' is now a verified register form',
+      name: 'alert_dialog_content',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Verified`
+  String get alert_dialog_button {
+    return Intl.message(
+      'Verified',
+      name: 'alert_dialog_button',
       desc: '',
       args: [],
     );

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:form_app/model/user.dart';
+import 'package:form_app/widgets/form/user_info.dart';
 
 import '../../generated/l10n.dart';
 
@@ -11,9 +13,10 @@ class FormWidget extends StatefulWidget {
 }
 
 class _FormWidgetState extends State<FormWidget> {
-
   final _formKey = GlobalKey<FormState>();
   final _scaffoldKey = GlobalKey<ScaffoldState>();
+
+  final newUser = User();
 
   final _nameController = TextEditingController();
   final _phoneController = TextEditingController();
@@ -21,7 +24,6 @@ class _FormWidgetState extends State<FormWidget> {
   final _lifeStoryController = TextEditingController();
   final _passController = TextEditingController();
   final _confirmPassController = TextEditingController();
-
 
   var _hiddenPass = true;
   @override
@@ -41,7 +43,7 @@ class _FormWidgetState extends State<FormWidget> {
     final List<String> countries = ['Russia', 'Ukraine', 'Germany', 'France'];
     String selectedCountry = 'Russia';
     return Scaffold(
-      key: _scaffoldKey,
+        key: _scaffoldKey,
         appBar: AppBar(title: Text(S.current.register_page_header)),
         body: Form(
           key: _formKey,
@@ -52,6 +54,7 @@ class _FormWidgetState extends State<FormWidget> {
                 TextFormField(
                     controller: _nameController,
                     validator: _validateName,
+                    onSaved: (value) => newUser.name = value!,
                     decoration: InputDecoration(
                       labelText:
                           S.of(context).register_page_filed_name_label_text,
@@ -85,6 +88,7 @@ class _FormWidgetState extends State<FormWidget> {
                   height: 30,
                 ),
                 TextFormField(
+                    onSaved: (value) => newUser.phone = value!,
                     keyboardType: TextInputType.phone,
                     controller: _phoneController,
                     maxLength: 15,
@@ -126,6 +130,7 @@ class _FormWidgetState extends State<FormWidget> {
                   height: 30,
                 ),
                 TextFormField(
+                    onSaved: (value) => newUser.email = value!,
                     keyboardType: TextInputType.emailAddress,
                     controller: _emailController,
                     validator: _validateEmail,
@@ -144,10 +149,11 @@ class _FormWidgetState extends State<FormWidget> {
                   height: 30,
                 ),
                 DropdownButtonFormField(
-                  decoration: const InputDecoration(
-                      border: OutlineInputBorder(),
-                      icon: Icon(Icons.map),
-                      labelText: 'Country?'),
+                  onSaved: (value) => newUser.country = value!,
+                  decoration: InputDecoration(
+                      border: const OutlineInputBorder(),
+                      icon: const Icon(Icons.map),
+                      labelText: S.current.country_label_text),
                   items: countries.map((country) {
                     return DropdownMenuItem(
                       child: Text(country),
@@ -167,6 +173,7 @@ class _FormWidgetState extends State<FormWidget> {
                   height: 30,
                 ),
                 TextFormField(
+                    onSaved: (value) => newUser.story = value!,
                     controller: _lifeStoryController,
                     maxLines: 3,
                     inputFormatters: [
@@ -192,6 +199,7 @@ class _FormWidgetState extends State<FormWidget> {
                   height: 30,
                 ),
                 TextFormField(
+                    onSaved: (value) => newUser.password = value!,
                     controller: _passController,
                     maxLength: 20,
                     obscureText: _hiddenPass,
@@ -275,20 +283,18 @@ class _FormWidgetState extends State<FormWidget> {
   }
 
   void _submitForm() {
-
     if (_formKey.currentState!.validate()) {
-      print(_nameController.text);
-      print(_phoneController.text);
+      _showDialog(name: _nameController.text);
       _formKey.currentState!.save();
     } else {
-     _showMessage(message: S.current.message_error_form);
+      _showMessage(message: S.current.message_error_form);
     }
   }
 
-void _showMessage({required String message}) {
+  void _showMessage({required String message}) {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
-        duration: const Duration(seconds: 1),
+        duration: const Duration(seconds: 5),
         backgroundColor: Colors.red,
         content: Text(
           message,
@@ -300,7 +306,36 @@ void _showMessage({required String message}) {
         ),
       ),
     );
-}
+  }
+
+  void _showDialog({required String name}) {
+    showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            title: Text(S.current.alert_dialog_titl),
+            content: Text('$name' + S.current.alert_dialog_content),
+            actions: [
+              TextButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => UserInfoPage(userInfo: newUser)),
+                  );
+                },
+                child: Text(
+                  S.current.alert_dialog_button,
+                  style: TextStyle(
+                      // color: Theme.of(context).primaryColorLight,
+                      fontSize: 18.0,
+                      fontWeight: FontWeight.w600),
+                ),
+              )
+            ],
+          );
+        });
+  }
 
   String? _validateName(String? value) {
     final nameExp = RegExp(r'^[A-Za-z ]+$');
