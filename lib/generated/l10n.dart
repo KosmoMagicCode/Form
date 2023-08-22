@@ -50,6 +50,16 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
+  /// `Register Page--------------------`
+  String get RegisterPage {
+    return Intl.message(
+      'Register Page--------------------',
+      name: 'RegisterPage',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Register Page`
   String get register_page_header {
     return Intl.message(
@@ -60,10 +70,10 @@ class S {
     );
   }
 
-  /// `Full Name`
+  /// `Full Name *`
   String get register_page_filed_name_label_text {
     return Intl.message(
-      'Full Name',
+      'Full Name *',
       name: 'register_page_filed_name_label_text',
       desc: '',
       args: [],
@@ -81,10 +91,180 @@ class S {
   }
 
   /// `The field can't be empty`
-  String get register_page_filed_name_error_text {
+  String get register_page_filed_name_error_text_empty {
     return Intl.message(
       'The field can\'t be empty',
-      name: 'register_page_filed_name_error_text',
+      name: 'register_page_filed_name_error_text_empty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter alphabetical characters.`
+  String get register_page_filed_name_error_text_symbol {
+    return Intl.message(
+      'Please enter alphabetical characters.',
+      name: 'register_page_filed_name_error_text_symbol',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone number *`
+  String get phone_label_text {
+    return Intl.message(
+      'Phone number *',
+      name: 'phone_label_text',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `(###) ###-##-##`
+  String get phone_helper_text {
+    return Intl.message(
+      '(###) ###-##-##',
+      name: 'phone_helper_text',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The field can't be empty`
+  String get phone_error_text_empty {
+    return Intl.message(
+      'The field can\'t be empty',
+      name: 'phone_error_text_empty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone number must be entered as (###) ###-##-##`
+  String get phone_error_text_symbol {
+    return Intl.message(
+      'Phone number must be entered as (###) ###-##-##',
+      name: 'phone_error_text_symbol',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email adress *`
+  String get email_label_text {
+    return Intl.message(
+      'Email adress *',
+      name: 'email_label_text',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The field can't be empty`
+  String get email_error_text_empty {
+    return Intl.message(
+      'The field can\'t be empty',
+      name: 'email_error_text_empty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Invalid email`
+  String get email_error_not_et {
+    return Intl.message(
+      'Invalid email',
+      name: 'email_error_not_et',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Life story`
+  String get life_story {
+    return Intl.message(
+      'Life story',
+      name: 'life_story',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password *`
+  String get password_label_text {
+    return Intl.message(
+      'Password *',
+      name: 'password_label_text',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter the password`
+  String get password_hint_text {
+    return Intl.message(
+      'Enter the password',
+      name: 'password_hint_text',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confitm password *`
+  String get confirm_password_label_text {
+    return Intl.message(
+      'Confitm password *',
+      name: 'confirm_password_label_text',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirm the password`
+  String get confirm_password_hint_text {
+    return Intl.message(
+      'Confirm the password',
+      name: 'confirm_password_hint_text',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The field Password can't be empty.`
+  String get pass_error_is_empty {
+    return Intl.message(
+      'The field Password can\'t be empty.',
+      name: 'pass_error_is_empty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The password must be at least 8 characters long.`
+  String get pass_error_lenght {
+    return Intl.message(
+      'The password must be at least 8 characters long.',
+      name: 'pass_error_lenght',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Passwords don't match, please try again.`
+  String get pass_error_dont_match {
+    return Intl.message(
+      'Passwords don\'t match, please try again.',
+      name: 'pass_error_dont_match',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Form is not valid! Please review and correct`
+  String get message_error_form {
+    return Intl.message(
+      'Form is not valid! Please review and correct',
+      name: 'message_error_form',
       desc: '',
       args: [],
     );
